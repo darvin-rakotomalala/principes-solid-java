@@ -18,7 +18,7 @@ SOLID est une approche de conception structurée qui garantit que votre logiciel
 
 ### Exemples
 ---
-1. **Principe Single responsibility**
+1. **Principe Single responsibility** - 
 Chaque classe en Java devrait avoir un seul travail à faire. Pour être précis, il ne devrait y avoir qu'une seule raison de changer de classe. Voici un exemple de classe Java qui ne respecte pas le principe de responsabilité unique (SRP) :
 ```
 public class Vehicle {
@@ -29,7 +29,7 @@ public class Vehicle {
 ```
 La classe `Vehicle` a trois responsabilités distinctes : printDetails, calculateValue et addVehicleToDB. En appliquant SRP, nous pouvons séparer la classe ci-dessus en trois classes avec des responsabilités distinctes.
 
-2. **Principe Open-closed**
+2. **Principe Open-closed** - 
 Les entités logicielles (par exemple, les classes, les modules, les fonctions) doivent être ouvertes pour une extension, mais fermées pour modification.
 
 Considérez la méthode ci-dessous de la classe VehicleCalculations :
@@ -61,7 +61,7 @@ public class Truck extends Vehicle{
 ```
 L'ajout d'un autre type `Vehicle` est aussi simple que de créer une autre sous-classe et de l'étendre à partir de la classe `Vehicle`.
 
-3. **Principe de Liskov substitution**
+3. **Principe de Liskov substitution** - 
 Le Liskov Substitution Principle (LSP) s'applique aux hiérarchies d'héritage telles que les classes dérivées doivent être complètement substituables à leurs classes de base.
 
 Prenons un exemple typique d'une classe dérivée `Square` et d'une classe de base `Rectangle` :
@@ -86,7 +86,7 @@ public class Square extends Rectangle {
 ```
 Les classes ci-dessus n'obéissent pas à LSP car vous ne pouvez pas remplacer la classe de base `Rectangle` par sa classe dérivée `Square`. La classe `Square` a des contraintes supplémentaires, c'est-à-dire que la hauteur et la largeur doivent être identiques. Par conséquent, le remplacement `Rectangle` par la class `Square` peut entraîner un comportement inattendu.
 
-4. **Principe d'Interface segregation**
+4. **Principe d'Interface segregation** - 
 Le Interface Segregation Principle (ISP) stipule que les clients ne doivent pas être forcés de dépendre de membres d'interface qu'ils n'utilisent pas. En d'autres termes, ne forcez aucun client à implémenter une interface qui ne lui est pas pertinente.
 
 Supposons qu'il existe une interface pour le véhicule et une classe `Bike` :
@@ -111,7 +111,7 @@ public class Bike implements Vehicle {
 ```
 Comme vous pouvez le voir, cela n'a pas de sens qu'une lasse `Bikec` implémente la méthode `openDoors()` car un vélo n'a pas de portes ! Pour résoudre ce problème, ISP propose que les interfaces soient décomposées en plusieurs petites interfaces cohérentes afin qu'aucune classe ne soit obligée d'implémenter une interface, et donc des méthodes, dont elle n'a pas besoin.
 
-5. **Principe d'inversion de dépendance**
+5. **Principe d'inversion de dépendance** - 
 Le Dependency Inversion Principle (DIP) stipule que nous devrions dépendre d'abstractions (interfaces et classes abstraites) plutôt que d'implémentations concrètes (classes). Les abstractions ne doivent pas dépendre de détails ; au lieu de cela, les détails devraient dépendre d'abstractions.
 
 Prenons l'exemple ci-dessous. Nous avons une classe `Car` qui dépend de la classe `Engine` concrète; par conséquent, il n'obéit pas au DIP.
